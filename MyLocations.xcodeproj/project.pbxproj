@@ -15,6 +15,9 @@
 		D81BF92C24DC34410037FBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81BF92B24DC34410037FBFE /* Assets.xcassets */; };
 		D81BF92F24DC34410037FBFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81BF92D24DC34410037FBFE /* LaunchScreen.storyboard */; };
 		D8A1B14224EAC944008F6F77 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1B14124EAC944008F6F77 /* Functions.swift */; };
+		D8A1B14524EAE410008F6F77 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8A1B14324EAE410008F6F77 /* DataModel.xcdatamodeld */; };
+		D8A1B14824EAF17F008F6F77 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1B14624EAF17F008F6F77 /* Location+CoreDataClass.swift */; };
+		D8A1B14924EAF17F008F6F77 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1B14724EAF17F008F6F77 /* Location+CoreDataProperties.swift */; };
 		D8AC81EF24E169D700D633E8 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC81EE24E169D700D633E8 /* LocationDetailsViewController.swift */; };
 		D8AC81F124E23F7E00D633E8 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC81F024E23F7E00D633E8 /* CategoryPickerViewController.swift */; };
 		D8AC81F324E3FD6C00D633E8 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC81F224E3FD6C00D633E8 /* HudView.swift */; };
@@ -31,6 +34,9 @@
 		D81BF92E24DC34410037FBFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D81BF93024DC34410037FBFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A1B14124EAC944008F6F77 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		D8A1B14424EAE410008F6F77 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		D8A1B14624EAF17F008F6F77 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataClass.swift"; path = "MyLocations/Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D8A1B14724EAF17F008F6F77 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "MyLocations/Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D8AC81EE24E169D700D633E8 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		D8AC81F024E23F7E00D633E8 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		D8AC81F224E3FD6C00D633E8 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
@@ -50,6 +56,8 @@
 		D81BF91424DC34400037FBFE = {
 			isa = PBXGroup;
 			children = (
+				D8A1B14624EAF17F008F6F77 /* Location+CoreDataClass.swift */,
+				D8A1B14724EAF17F008F6F77 /* Location+CoreDataProperties.swift */,
 				D81BF91F24DC34400037FBFE /* MyLocations */,
 				D81BF91E24DC34400037FBFE /* Products */,
 			);
@@ -73,6 +81,7 @@
 				D8AC81F024E23F7E00D633E8 /* CategoryPickerViewController.swift */,
 				D8AC81F224E3FD6C00D633E8 /* HudView.swift */,
 				D8A1B14124EAC944008F6F77 /* Functions.swift */,
+				D8A1B14324EAE410008F6F77 /* DataModel.xcdatamodeld */,
 				D81BF92624DC34400037FBFE /* SecondViewController.swift */,
 				D81BF92824DC34400037FBFE /* Main.storyboard */,
 				D81BF92B24DC34410037FBFE /* Assets.xcassets */,
@@ -155,11 +164,14 @@
 			files = (
 				D8AC81F124E23F7E00D633E8 /* CategoryPickerViewController.swift in Sources */,
 				D81BF92724DC34400037FBFE /* SecondViewController.swift in Sources */,
+				D8A1B14924EAF17F008F6F77 /* Location+CoreDataProperties.swift in Sources */,
 				D81BF92524DC34400037FBFE /* CurrentLocationViewController.swift in Sources */,
 				D8A1B14224EAC944008F6F77 /* Functions.swift in Sources */,
 				D81BF92124DC34400037FBFE /* AppDelegate.swift in Sources */,
 				D81BF92324DC34400037FBFE /* SceneDelegate.swift in Sources */,
+				D8A1B14524EAE410008F6F77 /* DataModel.xcdatamodeld in Sources */,
 				D8AC81F324E3FD6C00D633E8 /* HudView.swift in Sources */,
+				D8A1B14824EAF17F008F6F77 /* Location+CoreDataClass.swift in Sources */,
 				D8AC81EF24E169D700D633E8 /* LocationDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +370,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8A1B14324EAE410008F6F77 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8A1B14424EAE410008F6F77 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = D8A1B14424EAE410008F6F77 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D81BF91524DC34400037FBFE /* Project object */;
 }
