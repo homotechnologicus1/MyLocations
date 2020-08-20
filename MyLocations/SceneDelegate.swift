@@ -42,6 +42,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 as! CurrentLocationViewController
             controller.managedObjectContext = managedObjectContext
         }
+        print(applicationDocumentsDirectory)
+        listenForFatalCoreDataNotifications()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -72,6 +74,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    // MARK:- Helper methods
+    func listenForFatalCoreDataNotifications() {
+        // 1
+        NotificationCenter.default.addObserver(
+            forName: CoreDataSaveFailedNotification,
+            object: nil, queue: OperationQueue.main,
+            using: { notification in
+                // 2
+                let message = """
+    There was a fatal error in the app and it cannot continue.
+
+    Press OK to terminate the app. Sorry for the inconvenience.
+    """
+                // 3
+                let alert = UIAlertController(
+                    title: "Internal Error", message: message,
+                    preferredStyle: .alert)
+                
+                // 4
+                let action = UIAlertAction(title: "OK", style: .default) { _ in
+                    let exception = NSException(
+                        name: NSExceptionName.internalInconsistencyException,
+                        reason: "Fatal Core Data error", userInfo: nil)
+                    exception.raise()
+                }
+                alert.addAction(action)
+                
+                // 5
+                let tabController = self.window!.rootViewController!
+                tabController.present(alert, animated: true,
+                                      completion: nil)
+        })
+    }
 
 }
 
