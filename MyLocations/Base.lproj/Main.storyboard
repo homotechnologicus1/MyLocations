@@ -221,6 +221,7 @@ Cupertino CA 95014</string>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="rJ9-gV-yJk" id="eyD-mC-2gl"/>
+                        <segue destination="89Q-hR-wxr" kind="show" identifier="EditLocation" id="io3-zU-Shz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dz2-ZJ-r90" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -551,7 +552,7 @@ Cupertino CA 95014</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bdd-Qy-kSM"/>
+        <segue reference="io3-zU-Shz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="first" width="30" height="30"/>
