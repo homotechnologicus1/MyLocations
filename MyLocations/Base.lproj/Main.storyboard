@@ -293,7 +293,7 @@ Cupertino CA 95014</string>
                             </tableViewSection>
                             <tableViewSection id="OBg-9a-VAe">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="44" id="KJ1-vx-6KV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="KJ1-vx-6KV">
                                         <rect key="frame" x="0.0" y="223.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KJ1-vx-6KV" id="YNZ-8L-MYG">
@@ -306,10 +306,20 @@ Cupertino CA 95014</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="M4b-SI-Ek2">
+                                                    <rect key="frame" x="101" y="11" width="274" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="tVt-ii-lvL"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Jde-BE-hqH" firstAttribute="centerY" secondItem="YNZ-8L-MYG" secondAttribute="centerY" id="Rju-GU-25T"/>
+                                                <constraint firstItem="M4b-SI-Ek2" firstAttribute="bottom" secondItem="YNZ-8L-MYG" secondAttribute="bottomMargin" id="Wa5-of-1Qw"/>
+                                                <constraint firstItem="M4b-SI-Ek2" firstAttribute="leading" secondItem="Jde-BE-hqH" secondAttribute="trailing" id="XBl-KO-C9j"/>
+                                                <constraint firstItem="M4b-SI-Ek2" firstAttribute="top" secondItem="YNZ-8L-MYG" secondAttribute="topMargin" id="dTQ-74-oET"/>
                                                 <constraint firstItem="Jde-BE-hqH" firstAttribute="leading" secondItem="YNZ-8L-MYG" secondAttribute="leadingMargin" id="gkZ-hv-oR0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="M4b-SI-Ek2" secondAttribute="trailing" id="qoT-qg-rJM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -439,10 +449,13 @@ Cupertino CA 95014</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoLabel" destination="Jde-BE-hqH" id="dx1-SJ-D3V"/>
                         <outlet property="addressLabel" destination="pcy-Fj-MmL" id="KSs-i0-glT"/>
                         <outlet property="categoryLabel" destination="fa1-G8-P30" id="1Op-ZR-b35"/>
                         <outlet property="dateLabel" destination="ftP-gf-72A" id="gLX-ss-BFd"/>
                         <outlet property="descriptionTextView" destination="2IQ-1Q-XPa" id="PSb-4t-J1d"/>
+                        <outlet property="imageHeight" destination="tVt-ii-lvL" id="HGw-T9-f79"/>
+                        <outlet property="imageView" destination="M4b-SI-Ek2" id="aSZ-1Z-Wy0"/>
                         <outlet property="latitudeLabel" destination="hKF-OT-Krk" id="fEd-WI-DgM"/>
                         <outlet property="longitudeLabel" destination="z3t-Qg-bCQ" id="D1a-rY-eV5"/>
                     </connections>
