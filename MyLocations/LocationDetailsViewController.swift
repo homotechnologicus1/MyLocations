@@ -42,6 +42,8 @@ class LocationDetailsViewController: UITableViewController {
     
     var date = Date()
     
+    var observer: Any!
+    
     var locationToEdit: Location? {
         didSet {
             if let location = locationToEdit {
@@ -68,6 +70,7 @@ class LocationDetailsViewController: UITableViewController {
         } else {
             hudView.text = "Tagged"
             location = Location(context: managedObjectContext)
+            location.photoID = nil  // "no photo"
         }
         
         location.locationDescription = descriptionTextView.text
@@ -76,6 +79,23 @@ class LocationDetailsViewController: UITableViewController {
         location.longitude = coordinate.longitude
         location.date = date
         location.placemark = placemark
+        
+        // Save image
+        if let image = image {
+            // 1
+            if !location.hasPhoto {
+                location.photoID = Location.nextPhotoID() as NSNumber
+            }
+            // 2
+            if let data = image.jpegData(compressionQuality: 0.5) {
+                // 3
+                do {
+                    try data.write(to: location.photoURL, options: .atomic)
+                } catch {
+                    print("Error writing file: \(error)")
+                }
+            }
+        }
 
         do {
             try managedObjectContext.save()
@@ -129,6 +149,12 @@ class LocationDetailsViewController: UITableViewController {
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
 
+        listenForBackgroundNotification()
+    }
+    
+    deinit {
+        print("*** deinit \(self)")
+        NotificationCenter.default.removeObserver(observer!)
     }
     
     @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer) {
@@ -180,6 +206,20 @@ class LocationDetailsViewController: UITableViewController {
         // Add the following lines
         imageHeight.constant = 260
         tableView.reloadData()
+    }
+    
+    func listenForBackgroundNotification() {
+        observer = NotificationCenter.default.addObserver(
+            forName: UIApplication.didEnterBackgroundNotification,
+            object: nil,
+            queue: OperationQueue.main) { [weak self] _ in
+                if let weakSelf = self {
+                    if weakSelf.presentedViewController != nil {
+                        weakSelf.dismiss(animated: false, completion: nil)
+                    }
+                    weakSelf.descriptionTextView.resignFirstResponder()
+                }
+        }
     }
 
     // MARK:- Navigation
