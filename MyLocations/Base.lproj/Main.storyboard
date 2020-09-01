@@ -126,31 +126,41 @@ Cupertino CA 95014</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HI-AR-hTx">
-                                            <rect key="frame" x="11" y="7" width="392" height="21"/>
+                                            <rect key="frame" x="76" y="7" width="327" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zu-SO-IfI">
-                                            <rect key="frame" x="11" y="32" width="392" height="17"/>
+                                            <rect key="frame" x="76" y="32" width="327" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ko-WI-o2T">
+                                            <rect key="frame" x="16" y="2" width="52" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="TZw-if-vfA"/>
+                                                <constraint firstAttribute="height" constant="52" id="Uhk-x4-v4Q"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="8HI-AR-hTx" firstAttribute="leading" secondItem="ypH-2r-yTw" secondAttribute="leading" constant="11" id="LPM-Vs-D0R"/>
+                                        <constraint firstItem="9Zu-SO-IfI" firstAttribute="leading" secondItem="3Ko-WI-o2T" secondAttribute="trailing" constant="8" id="94H-vh-Smx"/>
                                         <constraint firstAttribute="bottom" secondItem="9Zu-SO-IfI" secondAttribute="bottom" constant="9" id="Lx0-ej-rMQ"/>
                                         <constraint firstAttribute="trailing" secondItem="9Zu-SO-IfI" secondAttribute="trailing" constant="11" id="OqN-1z-uhb"/>
+                                        <constraint firstItem="3Ko-WI-o2T" firstAttribute="leading" secondItem="ypH-2r-yTw" secondAttribute="leading" constant="16" id="WdO-MB-JOq"/>
+                                        <constraint firstItem="3Ko-WI-o2T" firstAttribute="top" secondItem="ypH-2r-yTw" secondAttribute="top" constant="2" id="cPg-1k-Hqy"/>
                                         <constraint firstAttribute="trailing" secondItem="8HI-AR-hTx" secondAttribute="trailing" constant="11" id="fMZ-29-CM2"/>
-                                        <constraint firstItem="9Zu-SO-IfI" firstAttribute="leading" secondItem="ypH-2r-yTw" secondAttribute="leading" constant="11" id="kYn-aP-vqI"/>
                                         <constraint firstItem="9Zu-SO-IfI" firstAttribute="top" secondItem="8HI-AR-hTx" secondAttribute="bottom" constant="4" id="qVb-9G-Szw"/>
+                                        <constraint firstItem="8HI-AR-hTx" firstAttribute="leading" secondItem="3Ko-WI-o2T" secondAttribute="trailing" constant="8" id="rZn-6U-g4Y"/>
                                         <constraint firstItem="8HI-AR-hTx" firstAttribute="top" secondItem="ypH-2r-yTw" secondAttribute="top" constant="7" id="s9Y-bb-6wE"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="9Zu-SO-IfI" id="FuJ-cy-SoE"/>
                                     <outlet property="descriptionLabel" destination="8HI-AR-hTx" id="AyS-Qy-3pZ"/>
+                                    <outlet property="photoImageView" destination="3Ko-WI-o2T" id="g7L-no-lhL"/>
                                     <segue destination="89Q-hR-wxr" kind="show" identifier="EditLocation" id="bdd-Qy-kSM"/>
                                 </connections>
                             </tableViewCell>
@@ -565,7 +575,7 @@ Cupertino CA 95014</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vFr-hx-kyY"/>
+        <segue reference="bdd-Qy-kSM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="first" width="30" height="30"/>
