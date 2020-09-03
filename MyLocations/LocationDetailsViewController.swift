@@ -241,29 +241,39 @@ class LocationDetailsViewController: UITableViewController {
         }
     }
     
+    
+    // cell's selection highlighting (for static table view cells)
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let selection = UIView(frame: CGRect.zero)
+        selection.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        cell.selectedBackgroundView = selection
+    }
+    
 }
 
 extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK:- Image Helper Methods
     func takePhotoWithCamera() {
-        let imagePicker = UIImagePickerController()
+        let imagePicker = MyImagePickerController()
         imagePicker.sourceType = .camera
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
+        imagePicker.view.tintColor = view.tintColor
         present(imagePicker, animated: true, completion: nil)
     }
     
     func choosePhotoFromLibrary() {
-        let imagePicker = UIImagePickerController()
+        let imagePicker = MyImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
+        imagePicker.view.tintColor = view.tintColor
         present(imagePicker, animated: true, completion: nil)
     }
     
     func pickPhoto() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+        if MyImagePickerController.isSourceTypeAvailable(.camera) {
             showPhotoMenu()
         } else {
             choosePhotoFromLibrary()

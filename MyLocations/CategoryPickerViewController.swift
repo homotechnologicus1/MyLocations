@@ -44,17 +44,22 @@ class CategoryPickerViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            
-            let categoryName = categories[indexPath.row]
-            cell.textLabel!.text = categoryName
-            
-            if categoryName == selectedCategoryName {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
-            }
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        let categoryName = categories[indexPath.row]
+        cell.textLabel!.text = categoryName
+        
+        if categoryName == selectedCategoryName {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
+        // cell's selection highlighting (for prototype cells)
+        let selection = UIView(frame: CGRect.zero)
+        selection.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        cell.selectedBackgroundView = selection
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
