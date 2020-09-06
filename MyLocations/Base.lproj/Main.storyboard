@@ -88,7 +88,7 @@ Cupertino CA 95014</string>
                                     <constraint firstItem="FtQ-FF-wNd" firstAttribute="top" secondItem="jmd-GX-QbV" secondAttribute="bottom" constant="91" id="yyh-xR-NY2"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTM-Vo-wBL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTM-Vo-wBL">
                                 <rect key="frame" x="16" y="568.66666666666663" width="382" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Get My Location">
@@ -103,6 +103,7 @@ Cupertino CA 95014</string>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="wTM-Vo-wBL" secondAttribute="trailing" constant="16" id="4C8-ve-wer"/>
                             <constraint firstItem="wTM-Vo-wBL" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="SzW-de-x6V"/>
+                            <constraint firstItem="wTM-Vo-wBL" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="480.66666666666663" id="ToR-Bo-SSG"/>
                             <constraint firstItem="bKX-lx-b69" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="ecX-Ni-JxA"/>
                             <constraint firstItem="bKX-lx-b69" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="qcH-f4-gHY"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="bKX-lx-b69" secondAttribute="trailing" constant="16" id="ufy-Ky-szr"/>
