@@ -294,10 +294,10 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             }
         } else {
             getButton.setTitle("Get My Location", for: .normal)
-        }
-        
-        if let spinner = view.viewWithTag(spinnerTag) {
-            spinner.removeFromSuperview()
+            
+            if let spinner = view.viewWithTag(spinnerTag) {
+                spinner.removeFromSuperview()
+            }
         }
     }
     
